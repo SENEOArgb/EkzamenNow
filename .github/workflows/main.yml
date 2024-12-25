@@ -15,7 +15,9 @@ jobs:
           dotnet-version: '6.0.x'
         
       - name: Restore dependencies
-        run: dotnet restore
+        run: |
+          dotnet restore src/ExamAppAverkin/ExamAppAverkin.csproj
+          dotnet restore src/ExamTest/ExamTest.csproj
       - name: Build project
         run: dotnet build src/ExamAppAverkin/ExamAppAverkin.csproj
 
